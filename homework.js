@@ -6,43 +6,88 @@
 
 // 產品資料
 const products = [
-  { id: 'prod-1', title: '經典白T', category: '衣服', origin_price: 500, price: 399, images: 'https://example.com/t1.jpg' },
-  { id: 'prod-2', title: '牛仔褲', category: '褲子', origin_price: 1200, price: 899, images: 'https://example.com/p1.jpg' },
-  { id: 'prod-3', title: '帆布鞋', category: '鞋子', origin_price: 1800, price: 1299, images: 'https://example.com/s1.jpg' },
-  { id: 'prod-4', title: '棒球帽', category: '配件', origin_price: 350, price: 299, images: 'https://example.com/h1.jpg' },
-  { id: 'prod-5', title: '運動外套', category: '衣服', origin_price: 2000, price: 1599, images: 'https://example.com/j1.jpg' }
+  {
+    id: "prod-1",
+    title: "經典白T",
+    category: "衣服",
+    origin_price: 500,
+    price: 399,
+    images: "https://example.com/t1.jpg",
+  },
+  {
+    id: "prod-2",
+    title: "牛仔褲",
+    category: "褲子",
+    origin_price: 1200,
+    price: 899,
+    images: "https://example.com/p1.jpg",
+  },
+  {
+    id: "prod-3",
+    title: "帆布鞋",
+    category: "鞋子",
+    origin_price: 1800,
+    price: 1299,
+    images: "https://example.com/s1.jpg",
+  },
+  {
+    id: "prod-4",
+    title: "棒球帽",
+    category: "配件",
+    origin_price: 350,
+    price: 299,
+    images: "https://example.com/h1.jpg",
+  },
+  {
+    id: "prod-5",
+    title: "運動外套",
+    category: "衣服",
+    origin_price: 2000,
+    price: 1599,
+    images: "https://example.com/j1.jpg",
+  },
 ];
 
 // 購物車資料
 const carts = [
-  { id: 'cart-1', product: products[0], quantity: 2 },
-  { id: 'cart-2', product: products[2], quantity: 1 },
-  { id: 'cart-3', product: products[4], quantity: 1 }
+  { id: "cart-1", product: products[0], quantity: 2 },
+  { id: "cart-2", product: products[2], quantity: 1 },
+  { id: "cart-3", product: products[4], quantity: 1 },
 ];
-
+//test git connection
 // 訂單資料
 const orders = [
   {
-    id: 'order-1',
+    id: "order-1",
     createdAt: 1704067200, // Unix timestamp
     paid: false,
     total: 2097,
-    user: { name: '王小明', tel: '0912345678', email: 'ming@example.com', address: '台北市信義區', payment: 'ATM' },
+    user: {
+      name: "王小明",
+      tel: "0912345678",
+      email: "ming@example.com",
+      address: "台北市信義區",
+      payment: "ATM",
+    },
     products: [
       { ...products[0], quantity: 2 },
-      { ...products[2], quantity: 1 }
-    ]
+      { ...products[2], quantity: 1 },
+    ],
   },
   {
-    id: 'order-2',
+    id: "order-2",
     createdAt: 1704153600,
     paid: true,
     total: 899,
-    user: { name: '李小華', tel: '0923456789', email: 'hua@example.com', address: '台中市西區', payment: 'Credit Card' },
-    products: [
-      { ...products[1], quantity: 1 }
-    ]
-  }
+    user: {
+      name: "李小華",
+      tel: "0923456789",
+      email: "hua@example.com",
+      address: "台中市西區",
+      payment: "Credit Card",
+    },
+    products: [{ ...products[1], quantity: 1 }],
+  },
 ];
 
 // ========================================
@@ -240,33 +285,36 @@ function groupOrdersByPayment(orders) {
 // ========================================
 
 // 任務一測試
-console.log('=== 任務一測試 ===');
-console.log('getProductById:', getProductById(products, 'prod-1'));
-console.log('getProductsByCategory:', getProductsByCategory(products, '衣服'));
-console.log('getDiscountRate:', getDiscountRate(products[0]));
-console.log('getAllCategories:', getAllCategories(products));
+console.log("=== 任務一測試 ===");
+console.log("getProductById:", getProductById(products, "prod-1"));
+console.log("getProductsByCategory:", getProductsByCategory(products, "衣服"));
+console.log("getDiscountRate:", getDiscountRate(products[0]));
+console.log("getAllCategories:", getAllCategories(products));
 
 // 任務二測試
-console.log('\n=== 任務二測試 ===');
-console.log('calculateCartOriginalTotal:', calculateCartOriginalTotal(carts));
-console.log('calculateCartTotal:', calculateCartTotal(carts));
-console.log('calculateSavings:', calculateSavings(carts));
-console.log('calculateCartItemCount:', calculateCartItemCount(carts));
-console.log('isProductInCart:', isProductInCart(carts, 'prod-1'));
+console.log("\n=== 任務二測試 ===");
+console.log("calculateCartOriginalTotal:", calculateCartOriginalTotal(carts));
+console.log("calculateCartTotal:", calculateCartTotal(carts));
+console.log("calculateSavings:", calculateSavings(carts));
+console.log("calculateCartItemCount:", calculateCartItemCount(carts));
+console.log("isProductInCart:", isProductInCart(carts, "prod-1"));
 
 // 任務三測試
-console.log('\n=== 任務三測試 ===');
-console.log('addToCart:', addToCart(carts, products[1], 2));
-console.log('updateCartItemQuantity:', updateCartItemQuantity(carts, 'cart-1', 5));
-console.log('removeFromCart:', removeFromCart(carts, 'cart-1'));
-console.log('clearCart:', clearCart());
+console.log("\n=== 任務三測試 ===");
+console.log("addToCart:", addToCart(carts, products[1], 2));
+console.log(
+  "updateCartItemQuantity:",
+  updateCartItemQuantity(carts, "cart-1", 5),
+);
+console.log("removeFromCart:", removeFromCart(carts, "cart-1"));
+console.log("clearCart:", clearCart());
 
 // 任務四測試
-console.log('\n=== 任務四測試 ===');
-console.log('calculateTotalRevenue:', calculateTotalRevenue(orders));
-console.log('filterOrdersByStatus:', filterOrdersByStatus(orders, true));
-console.log('generateOrderReport:', generateOrderReport(orders));
-console.log('groupOrdersByPayment:', groupOrdersByPayment(orders));
+console.log("\n=== 任務四測試 ===");
+console.log("calculateTotalRevenue:", calculateTotalRevenue(orders));
+console.log("filterOrdersByStatus:", filterOrdersByStatus(orders, true));
+console.log("generateOrderReport:", generateOrderReport(orders));
+console.log("groupOrdersByPayment:", groupOrdersByPayment(orders));
 
 // ========================================
 // 匯出函式供測試使用
@@ -288,5 +336,5 @@ module.exports = {
   calculateTotalRevenue,
   filterOrdersByStatus,
   generateOrderReport,
-  groupOrdersByPayment
+  groupOrdersByPayment,
 };
